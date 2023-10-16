@@ -1,0 +1,73 @@
+<head>
+    <h1>CS 405 Assignment 1 - Eren Güngör 29465
+
+
+    </h1>
+</head>
+
+<style type="text/css">
+    rect {
+        fill: blue;
+    }
+    .axis {
+        fill: black;
+    }
+    .values {
+        font-weight: bold;
+        font-style: italic;
+        font-size: 23px;
+    }
+    .axis-name {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    line {
+        stroke-width: 5px;
+    }
+    .ingraph-values {
+        writing-mode: vertical-rl;
+        font-size: 20px;
+        fill: whitesmoke;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <svg width="700px" height="500px" xmlns="http://www.w3.org/2000/svg" class="viewboxcontainer">
+        <!--Y AXIS VALUES-->
+        <text class="axis-name" x="110" y="20">Toplam İntihar</text>
+        <text class="values" x="45" y="70">4200     -</text>
+        <text class="values" x="45" y="150">4000     -</text>
+        <text class="values" x="45" y="230">3800     -</text>
+        <text class="values" x="45" y="310">3600     -</text>
+        <text class="values" x="45" y="390">3400     -</text>
+
+        <!--X AXIS VALUES-->
+        <text class="axis-name" x="655" y="440">Yıl</text>
+        <text class="values" x="175" y="475">2018</text>
+        <text class="values" x="275" y="475">2019</text>
+        <text class="values" x="375" y="475">2020</text>
+        <text class="values" x="475" y="475">2021</text>
+        <text class="values" x="575" y="475">2022</text>
+
+        <!--DEFINITIVE LINES-->
+        <line x1="200" y1="355" x2="300" y2="315" style="stroke: crimson;"></line>
+        <line x1="300" y1="315" x2="400" y2="205" style="stroke: crimson;"></line>
+        <line x1="400" y1="205" x2="500" y2="30" style="stroke: crimson;"></line>
+        <line x1="500" y1="30" x2="600" y2="50" style="stroke: crimson;"></line>
+
+        <!--BAR SHAPES-->
+        <rect class="axis" x="100" y="0" width="3px" height="450px" id="xaxis"/>
+        <rect class="axis" x="100" y="450" width="600px" height="3px" id="yaxis"/>
+        <rect x="175" y="400" width="50px" height="50px"/>
+        <text class="ingraph-values" x="200" y="405">3342</text>
+        <rect x="275" y="360" width="50px" height="90px"/>
+        <text class="ingraph-values" x="300" y="385">3476</text>
+        <rect x="375" y="250" width="50px" height="200px"/>
+        <text class="ingraph-values" x="400" y="340">3710</text>
+        <rect x="475" y="85" width="50px" height="365px"/>
+        <text class="ingraph-values" x="500" y="260">4194</text>
+        <rect x="575" y="95" width="50px" height="355px"/>
+        <text class="ingraph-values" x="600" y="265">4146</text>
+    </svg>
+</body>
