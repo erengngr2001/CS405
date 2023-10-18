@@ -1,0 +1,51 @@
+<head>
+    <h1>CS 405 Assignment 1 - Eren Güngör 29465
+
+
+    </h1>
+</head>
+
+<style type="text/css">
+    rect {
+        fill: #87CEEB;
+    }
+    .axis {
+        fill: black;
+    }
+</style>
+
+<body>
+    <svg width="600px" height="600px" xmlns="http://www.w3.org/2000/svg" class="viewboxcontainer" id="svgcontainer">
+        <rect class="axis" x="100" y="0" width="3px" height="500px" id="xaxis"/>
+        <rect class="axis" x="100" y="500" width="600px" height="3px" id="yaxis"/>
+        <text x="105" y="15">Toplam İntihar</text>
+        <text x="565" y="495">Yıl</text>
+    </svg>
+    
+    <script type="text/javascript">
+        function drawChart(l)
+        {
+            var html = '';
+            var yValue = 4500;
+            var y = 50;
+            var x = 135;
+            var year = 2014;
+            for (i=0; i < l.length; i++) 
+            {
+                html += '<rect x="' + x + '" y="' + (500-l[i]) + '" width="20" height="' + (l[i]) + '" />';
+                html += '<text x="50" y="' + y + '">' + (yValue) + '</text>';
+                html += '<text x="92" y="' + y + '">-</text>';
+                html += '<text x="' + (x-10) + '" y="520">' + (year) + '</text>';
+                x += 50;
+                y += 50;
+                year++;
+                yValue -= 500;
+            }
+            document.getElementById("svgcontainer").innerHTML += html;
+        }
+    
+    drawChart([316.9,324.6,319.3,316.8,334.2,347.6,371,419.4,414.6]);
+    
+    </script>
+</body>
+
