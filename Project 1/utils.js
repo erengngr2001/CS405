@@ -168,21 +168,21 @@ function getModelViewMatrix() {
 
     let identityMatrix = createIdentityMatrix();
     
-    const translationMatrix = createTranslationMatrix(0.3, -0.25, 0);
-    identityMatrix = multiplyMatrices(identityMatrix, translationMatrix);
+    const rotationMatrix_Z = createRotationMatrix_Z((Math.PI * 60) / 180);
+    identityMatrix = multiplyMatrices(rotationMatrix_Z, identityMatrix);
+    
+    const rotationMatrix_Y = createRotationMatrix_Y((Math.PI * 45) / 180);
+    identityMatrix = multiplyMatrices(rotationMatrix_Y, identityMatrix);
+    
+    const rotationMatrix_X = createRotationMatrix_X((Math.PI * 30) / 180);
+    identityMatrix = multiplyMatrices(rotationMatrix_X, identityMatrix);
     
     const scaleMatrix = createScaleMatrix(0.5, 0.5, 1);
-    identityMatrix = multiplyMatrices(identityMatrix, scaleMatrix);
-
-    const rotationMatrix_X = createRotationMatrix_X((Math.PI * 30) / 180);
-    identityMatrix = multiplyMatrices(identityMatrix, rotationMatrix_X);
-
-    const rotationMatrix_Y = createRotationMatrix_Y((Math.PI * 45) / 180);
-    identityMatrix = multiplyMatrices(identityMatrix, rotationMatrix_Y);
-
-    const rotationMatrix_Z = createRotationMatrix_Z((Math.PI * 60) / 180);
-    identityMatrix = multiplyMatrices(identityMatrix, rotationMatrix_Z);
-
+    identityMatrix = multiplyMatrices(scaleMatrix, identityMatrix);
+    
+    const translationMatrix = createTranslationMatrix(0.3, -0.25, 0);
+    identityMatrix = multiplyMatrices(translationMatrix, identityMatrix);
+    
     return identityMatrix;
 }
 
